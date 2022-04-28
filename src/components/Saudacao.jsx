@@ -7,6 +7,14 @@ export default class Saudacao extends Component {
         nome: this.props.nome
     }
 
+    constructor(props) {
+
+        super(props)
+
+        this.setTipo = this.setTipo.bind(this)
+ 
+    }
+
     setTipo(e) {
         this.setState({
             tipo: e.target.value
@@ -18,6 +26,7 @@ export default class Saudacao extends Component {
             nome: e.target.value
         })
     }
+
     render() {
         const { tipo, nome } = this.state
         return (
@@ -28,7 +37,7 @@ export default class Saudacao extends Component {
                     type='text'
                     placeholder="Tipo..." 
                     value={tipo} 
-                    onChange={e => this.setTipo(e)}
+                    onChange={this.setTipo}
                 />
                 <input 
                     type="text" 
